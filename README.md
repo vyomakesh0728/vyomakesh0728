@@ -1,16 +1,19 @@
-## Hi there 👋
+### hey 👋
 
-<!--
-**vyomakesh0728/vyomakesh0728** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Interests:**
+- gpu programming & kernel optimization
+- reinforcement learning
+- distributed training & inference
 
-Here are some ideas to get you started:
+**Open to collaborations.**
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**Key projects:**
+- Core contributor to PrimeIntellect-ai Environments-Hub - built 6 evaluation environments for web agents, tool-use, and safety evals
+- Optimized zerobrew package manager 3.6x faster (6min → 1.7min) via racing cancellation and HTTP/2 tuning
+- Achieved 12.804s in NVIDIA FP4 GEMM kernel optimization hackathon on B200 using CuTe DSL
+- Working on RLHF/GDPO pipelines and reward modeling
+
+**Contact:**
+- Email: vyomakesh018@gmail.com
+- Twitter/X: [@juscallmevyom](https://twitter.com/juscallmevyom)
+- LinkedIn: [vyomakesh-dundigalla](https://www.linkedin.com/in/vyomakesh-dundigalla-061575159/)
