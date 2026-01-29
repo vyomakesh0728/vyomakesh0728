@@ -1,8 +1,8 @@
 ### hey 👋
 
 **Interests:**
-- gpu programming & kernel optimization
-- reinforcement learning
+- reinforcement learning 
+- kernel optimization
 - distributed training & inference
 
 **Open to collaborations.**
