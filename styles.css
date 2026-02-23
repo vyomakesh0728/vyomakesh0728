@@ -1,0 +1,261 @@
+:root {
+  --bg: #efe8d8;
+  --ink: #1e2a2f;
+  --muted: #47535a;
+  --accent: #d4572c;
+  --accent-2: #1f7a8c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Archivo", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 420px at 5% -10%, rgba(212, 87, 44, 0.22), transparent 58%),
+    radial-gradient(900px 420px at 95% 0%, rgba(31, 122, 140, 0.2), transparent 52%),
+    var(--bg);
+}
+
+.shell {
+  width: min(210mm, calc(100% - 2rem));
+  margin: 1.8rem auto 2.3rem;
+}
+
+.mantra {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+}
+
+.hero {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.hero-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(180px, 0.7fr);
+  gap: 1.05rem;
+  align-items: start;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(1.35rem, 3.7vw, 2rem);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.lede {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.98rem;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+}
+
+.profile-wrap {
+  margin: 0;
+  width: min(210px, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 26%;
+  display: block;
+}
+
+.contact-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.42rem;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.social-pill:hover,
+.social-pill:focus-visible {
+  transform: translateY(-1px);
+  color: var(--accent);
+  outline: none;
+}
+
+.social-pill img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.journal {
+  margin-top: 0.55rem;
+  max-width: 62ch;
+}
+
+.journal p {
+  margin: 0.82rem 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.journal p:first-child {
+  margin-top: 0;
+}
+
+.projects {
+  margin-top: 1.15rem;
+  max-width: 62ch;
+}
+
+.projects h2 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.02em;
+  color: var(--accent-2);
+}
+
+.projects p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.66;
+}
+
+.projects a {
+  color: var(--ink);
+  text-decoration-color: rgba(30, 42, 47, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.projects a:hover,
+.projects a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  outline: none;
+}
+
+.fade-dots {
+  margin: 1.2rem 0 1rem;
+  height: 2px;
+  background-image: radial-gradient(circle, rgba(30, 42, 47, 0.56) 1px, transparent 1.15px);
+  background-size: 10px 2px;
+  mask-image: linear-gradient(to right, transparent, black 14%, black 86%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 14%, black 86%, transparent);
+}
+
+footer {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 620ms cubic-bezier(0.21, 0.92, 0.23, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(100%, calc(100% - 1.2rem));
+    margin-top: 1rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 0.95rem;
+  }
+
+  h1 {
+    white-space: normal;
+  }
+
+  .side-column {
+    align-items: flex-start;
+  }
+
+  .profile-wrap {
+    width: min(175px, 52vw);
+    border-radius: 12px;
+  }
+
+  .contact-grid {
+    justify-content: flex-start;
+  }
+
+  .journal p {
+    font-size: 1rem;
+    line-height: 1.66;
+  }
+
+  .projects p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
