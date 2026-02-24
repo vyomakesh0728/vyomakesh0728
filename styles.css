@@ -96,6 +96,10 @@ h1 {
   gap: 0.42rem;
 }
 
+.contact-grid-mobile {
+  display: none;
+}
+
 .social-pill {
   display: inline-flex;
   align-items: center;
@@ -229,7 +233,7 @@ footer {
   }
 
   .side-column {
-    align-items: flex-start;
+    display: none;
   }
 
   .profile-wrap {
@@ -239,6 +243,12 @@ footer {
 
   .contact-grid {
     justify-content: flex-start;
+  }
+
+  .contact-grid-mobile {
+    display: flex;
+    margin-top: 0.45rem;
+    margin-bottom: 0.1rem;
   }
 
   .journal p {
