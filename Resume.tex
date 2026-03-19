@@ -1,0 +1,103 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,margin=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\newcommand{\resumeSection}[1]{%
+  \vspace{0.4em}%
+  \noindent\textbf{\large #1}\hspace{0.45em}\leaders\hrule height 0.5pt\hfill\kern0pt\par
+  \vspace{0.15em}%
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabularx}\vspace{-0.5em}
+}
+
+\newcommand{\resumeEntry}[4]{
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabularx}\vspace{0.15em}
+}
+
+\newcommand{\resumeCertEntry}[3]{
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} {\small \textbar{} \textit{#2}} & \textbf{#3} \\
+  \end{tabularx}
+  \vspace{0.05em}
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Vyomakesh Dundigalla}}\\[0.25em]
+    {\normalsize AI Research Engineer \textbar{} Agents \textbar{} Evaluation Infrastructure \textbar{} GPU Systems}\\[0.4em]
+    {\small
+    \href{mailto:vyomakesh018@gmail.com}{vyomakesh018@gmail.com} \textbar{}
+    +91 8332969195 \textbar{}
+    \href{https://linkedin.com/in/vyomakesh-dundigalla-061575159}{linkedin.com/in/vyomakesh-dundigalla-061575159}}\\[-0.1em]
+    {\small \href{https://github.com/vyomakesh0728}{github.com/vyomakesh0728}}
+\end{center}
+
+\resumeSection{Summary}
+{\small
+AI research engineer focused on LLM agents, post-training alignment, reproducible evaluation systems, and GPU-level performance optimization. Open-source contributor building web-agent and tool-use benchmarks, trace instrumentation, and scalable infrastructure for agent experimentation.
+}
+
+\resumeSection{Research Interests}
+\begin{itemize}
+    \item Reinforcement learning, pre/post-training, reward modeling, and preference optimization.
+    \item Evaluation frameworks for LLM agents, benchmark design, and instrumentation for failure analysis.
+\end{itemize}
+
+\resumeSection{Highlighted Achievements}
+\begin{itemize}
+    \item Optimized Zerobrew package manager downloads 3.6x faster (6 min to 1.7 min) via racing cancellation and HTTP/2 tuning (Jan 2026).
+    \item Achieved 12.804 microseconds in NVIDIA GPU Mode ``nvfp4 block-scaled GEMM'' optimization hackathon on B200, targeting speed-of-light performance with CuTeDSL (Dec 2025).
+    \item Built 6 reproducible evaluation environments and benchmarks (2 safety, 2 web, 1 tool-use/MCP, 1 game suite) for PrimeIntellect verifiers (2025).
+\end{itemize}
+
+\resumeSection{Experience}
+\resumeSubheading{Zerobrew}{Jan 2026}{Performance / Systems Engineer (OSS)}{Remote}
+\begin{itemize}
+    \item Delivered 3.6x download optimization (361s to 99s) with racing cancellation and HTTP/2 tuning, eliminating redundant bandwidth usage through atomic coordination (AtomicBool, Notify, and Semaphore).
+    \item Merged to main and immediately impacted all users.
+\end{itemize}
+
+\resumeSubheading{PrimeIntellect-ai (Environments Hub)}{2025 -- Present}{AI Research Engineer (Agents \& Evals, OSS)}{Remote}
+\begin{itemize}
+    \item Core contributor to evaluation infrastructure with 5+ merged PRs spanning benchmarks, web agents, and training pipeline integrations.
+    \item Architected 6 evaluation environments across web agents, tool-use systems, and games with a unified API contract for reproducible cross-benchmark testing.
+    \item Standardized reward scoring semantics and trace instrumentation across benchmarks, reducing failure-mode debugging time for research teams.
+    \item Hardened evaluation infrastructure via sandboxed execution boundaries and process isolation for safe, auditable agent runs.
+    \item Key contributions: BALROG game suite (6 simulators), BrowsecompPlus, WebVoyager, JailbreakBench/WMDP safety evals, and HuggingFace MCP integration.
+\end{itemize}
+
+\resumeSection{Technical Skills}
+\textbf{Languages:} Python, C, C++, Rust, Bash, SQL, CUDA\\
+\textbf{DL / ML:} PyTorch, TensorFlow, Keras, NumPy, Matplotlib, Pandas, SciPy\\
+\textbf{GPU:} Cutlass, CuTeDSL, FP4/FP8 kernels, throughput and latency optimization\\
+\textbf{Eval \& Agents:} Stateful, web, and tool-use benchmarks, reward design, trace instrumentation\\
+\textbf{Infra \& Tooling:} Docker, sandboxed execution, API integrations, profiling and performance tooling\\
+\textbf{Web \& Others:} HTML, CSS, JavaScript, FastAPI, Node.js, Git, LaTeX
+
+\resumeSection{Education}
+\resumeEntry{Queen Mary University of London}{Sep 2022 -- Oct 2023}{MSc in Business in Blockchain \& Society}{London, UK}
+\resumeEntry{Keshav Memorial Institute of Technology (Aff. JNTU)}{Oct 2017 -- Sep 2021}{Bachelor of Technology in Electronics and Communication Engineering}{Hyderabad, India}
+
+\resumeSection{Certifications}
+\resumeCertEntry{Deep Learning Specialization}{DeepLearning.AI}{Apr 2020}
+\resumeCertEntry{Google IT Automation with Python}{Google}{Aug 2020}
+
+\end{document}
