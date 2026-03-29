@@ -183,6 +183,12 @@ h1 {
   text-underline-offset: 2px;
 }
 
+.proposals a {
+  font-style: italic;
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+
 .projects a:hover,
 .projects a:focus-visible,
 .proposals a:hover,
@@ -190,6 +196,12 @@ h1 {
   color: var(--accent);
   text-decoration-color: var(--accent);
   outline: none;
+}
+
+.proposals a:hover,
+.proposals a:focus-visible {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
 }
 
 .fade-dots {
