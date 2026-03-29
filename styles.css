@@ -152,12 +152,14 @@ h1 {
   margin-top: 0;
 }
 
-.projects {
+.projects,
+.proposals {
   margin-top: 1.15rem;
   max-width: 62ch;
 }
 
-.projects h2 {
+.projects h2,
+.proposals h2 {
   margin: 0;
   font-size: 1.02rem;
   font-family: "Space Mono", monospace;
@@ -165,14 +167,16 @@ h1 {
   color: var(--accent-2);
 }
 
-.projects p {
+.projects p,
+.proposals p {
   margin: 0.55rem 0 0;
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.66;
 }
 
-.projects a {
+.projects a,
+.proposals a {
   color: var(--ink);
   text-decoration-color: rgba(30, 42, 47, 0.35);
   text-decoration-thickness: 1px;
@@ -180,7 +184,9 @@ h1 {
 }
 
 .projects a:hover,
-.projects a:focus-visible {
+.projects a:focus-visible,
+.proposals a:hover,
+.proposals a:focus-visible {
   color: var(--accent);
   text-decoration-color: var(--accent);
   outline: none;
@@ -256,7 +262,8 @@ footer {
     line-height: 1.66;
   }
 
-  .projects p {
+  .projects p,
+  .proposals p {
     font-size: 0.98rem;
   }
 }
