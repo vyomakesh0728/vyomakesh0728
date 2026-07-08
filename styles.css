@@ -1,5 +1,5 @@
 :root {
-  --bg: #efe8d8;
+  --bg: #ffffff;
   --ink: #1e2a2f;
   --muted: #47535a;
   --accent: #d4572c;
@@ -15,10 +15,7 @@ body {
   min-height: 100vh;
   font-family: "Archivo", "Segoe UI", sans-serif;
   color: var(--ink);
-  background:
-    radial-gradient(1000px 420px at 5% -10%, rgba(212, 87, 44, 0.22), transparent 58%),
-    radial-gradient(900px 420px at 95% 0%, rgba(31, 122, 140, 0.2), transparent 52%),
-    var(--bg);
+  background: var(--bg);
 }
 
 .shell {
