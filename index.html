@@ -12,73 +12,66 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260708b" />
 </head>
 
 <body>
   <main class="shell">
     <p class="mantra reveal">|| श्री ||</p>
 
-    <header class="hero reveal">
-        <div class="hero-main">
-          <div class="hero-copy">
-            <h1>Vyomakesh Dundigalla</h1>
-            <p class="lede">
-              I build evaluation infrastructure, open-source RL environments, and GPU-level
-              performance tooling for AI systems.
-            </p>
+    <div class="layout">
+      <aside class="side-column reveal" style="--d: 120ms">
+        <figure class="profile-wrap">
+          <img class="profile-image" src="assets/images/profile.jpg?v=20260708" alt="Vyomakesh Dundigalla profile photo" />
+        </figure>
 
-            <ul class="contact-grid contact-grid-mobile" aria-label="Social and contact links">
-              <li>
-                <a class="social-pill" href="https://linkedin.com/in/vyomakesh-dundigalla-061575159" target="_blank"
-                  rel="noreferrer noopener" aria-label="LinkedIn">
-                  <img src="assets/icons/linkedin.svg" alt="LinkedIn icon" />
-                  <span class="sr-only">LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a class="social-pill" href="https://x.com/juscallmevyom" target="_blank" rel="noreferrer noopener"
-                  aria-label="Twitter or X">
-                  <img src="assets/icons/twitter.svg" alt="X icon" />
-                  <span class="sr-only">Twitter or X</span>
-                </a>
-              </li>
-              <li>
-                <a class="social-pill" href="mailto:vyomakesh018@gmail.com" aria-label="Send email">
-                  <img src="assets/icons/email.svg" alt="Email icon" />
-                  <span class="sr-only">Email</span>
-                </a>
-              </li>
-              <li>
-                <a class="social-pill" href="https://github.com/vyomakesh0728" target="_blank" rel="noreferrer noopener"
-                  aria-label="GitHub">
-                  <img src="assets/icons/github.svg" alt="GitHub icon" />
-                  <span class="sr-only">GitHub</span>
-                </a>
-              </li>
-              <li>
-                <a class="social-pill" href="Resume.pdf?v=20260527a" target="_blank" rel="noreferrer noopener"
-                  aria-label="Open CV PDF">
-                  <img src="assets/icons/cv.svg" alt="CV icon" />
-                  <span class="sr-only">CV</span>
-                </a>
-              </li>
-            </ul>
+        <ul class="contact-grid" aria-label="Social and contact links">
+          <li>
+            <a class="social-pill" href="https://linkedin.com/in/vyomakesh-dundigalla-061575159" target="_blank"
+              rel="noreferrer noopener" aria-label="LinkedIn">
+              <img src="assets/icons/linkedin.svg" alt="LinkedIn icon" />
+              <span class="sr-only">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-pill" href="https://x.com/juscallmevyom" target="_blank" rel="noreferrer noopener"
+              aria-label="Twitter or X">
+              <img src="assets/icons/twitter.svg" alt="X icon" />
+              <span class="sr-only">Twitter or X</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-pill" href="mailto:vyomakesh018@gmail.com" aria-label="Send email">
+              <img src="assets/icons/email.svg" alt="Email icon" />
+              <span class="sr-only">Email</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-pill" href="https://github.com/vyomakesh0728" target="_blank" rel="noreferrer noopener"
+              aria-label="GitHub">
+              <img src="assets/icons/github.svg" alt="GitHub icon" />
+              <span class="sr-only">GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-pill" href="Resume.pdf?v=20260527a" target="_blank" rel="noreferrer noopener"
+              aria-label="Open CV PDF">
+              <img src="assets/icons/cv.svg" alt="CV icon" />
+              <span class="sr-only">CV</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
 
-          <section class="section now">
-            <h2>Now</h2>
-            <p>
-              Working on ARC-AGI-3, building open-source RL environments.
-            </p>
-          </section>
-        </div>
+      <div class="content">
+        <header class="hero reveal">
+          <h1>Vyomakesh Dundigalla</h1>
+          <p class="lede">
+            I build evaluation infrastructure, open-source RL environments, and GPU-level
+            performance tooling for AI systems.
+          </p>
 
-        <div class="side-column">
-          <figure class="profile-wrap">
-            <img class="profile-image" src="assets/images/profile.jpg?v=20260708" alt="Vyomakesh Dundigalla profile photo" />
-          </figure>
-
-          <ul class="contact-grid" aria-label="Social and contact links">
+          <ul class="contact-grid contact-grid-mobile" aria-label="Social and contact links">
             <li>
               <a class="social-pill" href="https://linkedin.com/in/vyomakesh-dundigalla-061575159" target="_blank"
                 rel="noreferrer noopener" aria-label="LinkedIn">
@@ -114,49 +107,56 @@
               </a>
             </li>
           </ul>
-        </div>
+        </header>
+
+        <section class="section now reveal" style="--d: 160ms">
+          <h2>Now</h2>
+          <p>
+            Working on ARC-AGI-3, building open-source RL environments.
+          </p>
+        </section>
+
+        <section class="section reveal" style="--d: 200ms">
+          <h2>Selected work</h2>
+          <p>
+            Made <a href="https://github.com/lucasgelfond/zerobrew" target="_blank"
+              rel="noreferrer noopener">Zerobrew</a> downloads 3.6&times; faster (361&thinsp;s &rarr; 99&thinsp;s)
+            with racing cancellation and HTTP/2 tuning — merged to main and shipped to every user.
+          </p>
+          <p>
+            Built six reproducible evaluation environments — safety, web agents, tool use/MCP, and a
+            game suite — for <a href="https://github.com/PrimeIntellect-ai/community-environments" target="_blank"
+              rel="noreferrer noopener">Prime Intellect's Community Environments</a>, separating rollout,
+            verifier, and scoring paths so failures are easy to attribute.
+          </p>
+          <p>
+            Reached 12.804&thinsp;&micro;s on an NVIDIA B200 in <a href="https://www.gpumode.com/" target="_blank"
+              rel="noreferrer noopener">GPU Mode</a>'s nvfp4 block-scaled GEMM hackathon, writing CuTeDSL
+            kernels aimed at speed-of-light performance.
+          </p>
+          <p>
+            Built <a href="https://github.com/vyomakesh0728/opengraphs" target="_blank"
+              rel="noreferrer noopener">OpenGraphs</a> at Build India Hack (Anthropic &times; Replit &times;
+            Lightspeed): a local-first, TUI-native experiment tracker for AI runs over SSH — live graphs,
+            logs, and run comparison on a Rust-first stack.
+          </p>
+        </section>
+
+        <section id="proposals" class="section reveal" style="--d: 220ms">
+          <h2>Research</h2>
+          <p>
+            <a class="paper"
+              href="VGAC%3A%20Veri%EF%AC%81er-Grounded%20Agreement-Calibrated%20Reinforcement%20Learning%20for%20Long-Horizon%20Agents.pdf?v=20260708"
+              target="_blank" rel="noreferrer noopener">VGAC: Verifier-Grounded Agreement-Calibrated
+              Reinforcement Learning for Long-Horizon Agents</a>
+            proposes verifier-grounded rollout agreement, entropy-aware calibration, and reward shaping
+            to reduce silent overconfident failures in long-horizon RL agents.
+          </p>
+        </section>
       </div>
-      </header>
+    </div>
 
-      <section class="section reveal" style="--d: 200ms">
-        <h2>Selected work</h2>
-        <p>
-          Made <a href="https://github.com/lucasgelfond/zerobrew" target="_blank"
-            rel="noreferrer noopener">Zerobrew</a> downloads 3.6&times; faster (361&thinsp;s &rarr; 99&thinsp;s)
-          with racing cancellation and HTTP/2 tuning — merged to main and shipped to every user.
-        </p>
-        <p>
-          Built six reproducible evaluation environments — safety, web agents, tool use/MCP, and a
-          game suite — for <a href="https://github.com/PrimeIntellect-ai/community-environments" target="_blank"
-            rel="noreferrer noopener">Prime Intellect's Community Environments</a>, separating rollout,
-          verifier, and scoring paths so failures are easy to attribute.
-        </p>
-        <p>
-          Reached 12.804&thinsp;&micro;s on an NVIDIA B200 in <a href="https://www.gpumode.com/" target="_blank"
-            rel="noreferrer noopener">GPU Mode</a>'s nvfp4 block-scaled GEMM hackathon, writing CuTeDSL
-          kernels aimed at speed-of-light performance.
-        </p>
-        <p>
-          Built <a href="https://github.com/vyomakesh0728/opengraphs" target="_blank"
-            rel="noreferrer noopener">OpenGraphs</a> at Build India Hack (Anthropic &times; Replit &times;
-          Lightspeed): a local-first, TUI-native experiment tracker for AI runs over SSH — live graphs,
-          logs, and run comparison on a Rust-first stack.
-        </p>
-      </section>
-
-      <section id="proposals" class="section reveal" style="--d: 220ms">
-        <h2>Research</h2>
-        <p>
-          <a class="paper"
-            href="VGAC%3A%20Veri%EF%AC%81er-Grounded%20Agreement-Calibrated%20Reinforcement%20Learning%20for%20Long-Horizon%20Agents.pdf?v=20260708"
-            target="_blank" rel="noreferrer noopener">VGAC: Verifier-Grounded Agreement-Calibrated
-            Reinforcement Learning for Long-Horizon Agents</a>
-          proposes verifier-grounded rollout agreement, entropy-aware calibration, and reward shaping
-          to reduce silent overconfident failures in long-horizon RL agents.
-        </p>
-      </section>
-
-      <div class="fade-dots reveal" style="--d: 240ms" aria-hidden="true"></div>
+    <div class="fade-dots reveal" style="--d: 240ms" aria-hidden="true"></div>
 
     <footer class="reveal" style="--d: 280ms">
       <p>© 2026</p>
