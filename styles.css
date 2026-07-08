@@ -23,15 +23,6 @@ body {
   margin: 1.8rem auto 2.3rem;
 }
 
-.mantra {
-  margin: 0 0 1rem;
-  text-align: center;
-  font-family: "Space Mono", monospace;
-  font-size: 0.98rem;
-  letter-spacing: 0.08em;
-  color: #e45a2f;
-}
-
 .hero {
   background: transparent;
   border: 0;
