@@ -38,7 +38,7 @@ body {
 h1 {
   margin: 0;
   font-weight: 500;
-  font-size: clamp(1.35rem, 3.7vw, 2rem);
+  font-size: clamp(1.5rem, 4.2vw, 2.3rem);
   line-height: 1.1;
   white-space: nowrap;
   color: var(--accent-2);
@@ -133,7 +133,7 @@ h1 {
 }
 
 .section.now {
-  margin-top: 1rem;
+  margin-top: 1.7rem;
 }
 
 .section h2 {
