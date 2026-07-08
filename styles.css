@@ -209,8 +209,17 @@ footer {
   }
 
   .layout {
-    grid-template-columns: 1fr;
-    gap: 0.95rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.4rem 0.95rem;
+    align-items: center;
+  }
+
+  .content {
+    display: contents;
+  }
+
+  .content .section {
+    grid-column: 1 / -1;
   }
 
   h1 {
@@ -226,7 +235,7 @@ footer {
   }
 
   .profile-wrap {
-    width: 132px;
+    width: min(132px, 35vw);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
   }
