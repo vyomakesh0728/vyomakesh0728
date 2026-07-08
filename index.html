@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vyomakesh Dundigalla | Portfolio</title>
   <meta name="description"
-    content="Personal portfolio of Vyomakesh Dundigalla and practical work across evals, systems, and AI tooling." />
+    content="Vyomakesh Dundigalla — evaluation infrastructure, open-source RL environments, and GPU performance tooling for AI systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -23,6 +23,10 @@
         <div class="hero-main">
           <div class="hero-copy">
             <h1>Vyomakesh Dundigalla</h1>
+            <p class="lede">
+              I build evaluation infrastructure, open-source RL environments, and GPU-level
+              performance tooling for AI systems.
+            </p>
 
             <ul class="contact-grid contact-grid-mobile" aria-label="Social and contact links">
               <li>
@@ -61,21 +65,10 @@
               </li>
             </ul>
 
-          <section class="journal">
+          <section class="section now">
+            <h2>Now</h2>
             <p>
-              Over the past couple of months I have contributed to Prime Intellect's Environments Hub,
-              now Community Environments, building eval setups that are easier to run, debug, and trust.
-            </p>
-            <p>
-              I also worked on Zerobrew and helped push the download path from around 6 minutes to
-              roughly 1 minute. From there I went deeper on GPU kernels with PTX, CUTLASS, and CuTeDSL,
-              and took part in the NVIDIA FP4 GEMM optimization hackathon where we pushed kernels close
-              to speed-of-light performance.
-            </p>
-            <p>
-              One project I really enjoyed was OpenGraphs, which we built during Build India Hack by
-              Devfolio (Anthropic x Replit x Lightspeed), a local-first real-time TUI for AI training
-              that helps developers spot issues early and cut wasted GPU hours.
+              Working on ARC-AGI-3, building open-source RL environments.
             </p>
           </section>
         </div>
@@ -125,22 +118,41 @@
       </div>
       </header>
 
-      <section class="projects reveal" style="--d: 200ms">
-        <h2>Projects</h2>
+      <section class="section reveal" style="--d: 200ms">
+        <h2>Selected work</h2>
         <p>
-          <a href="https://github.com/vyomakesh0728/opengraphs" target="_blank" rel="noreferrer noopener">OpenGraphs</a>
-          is a local-first, TUI-native experiment tracker for AI runs over SSH, with live graphs, logs,
-          run comparison/filtering, and a Rust-first stack (ratatui + backend daemon + optional Python
-          agent layer).
+          Made <a href="https://github.com/lucasgelfond/zerobrew" target="_blank"
+            rel="noreferrer noopener">Zerobrew</a> downloads 3.6&times; faster (361&thinsp;s &rarr; 99&thinsp;s)
+          with racing cancellation and HTTP/2 tuning — merged to main and shipped to every user.
+        </p>
+        <p>
+          Built six reproducible evaluation environments — safety, web agents, tool use/MCP, and a
+          game suite — for <a href="https://github.com/PrimeIntellect-ai/community-environments" target="_blank"
+            rel="noreferrer noopener">Prime Intellect's Community Environments</a>, separating rollout,
+          verifier, and scoring paths so failures are easy to attribute.
+        </p>
+        <p>
+          Reached 12.804&thinsp;&micro;s on an NVIDIA B200 in <a href="https://www.gpumode.com/" target="_blank"
+            rel="noreferrer noopener">GPU Mode</a>'s nvfp4 block-scaled GEMM hackathon, writing CuTeDSL
+          kernels aimed at speed-of-light performance.
+        </p>
+        <p>
+          Built <a href="https://github.com/vyomakesh0728/opengraphs" target="_blank"
+            rel="noreferrer noopener">OpenGraphs</a> at Build India Hack (Anthropic &times; Replit &times;
+          Lightspeed): a local-first, TUI-native experiment tracker for AI runs over SSH — live graphs,
+          logs, and run comparison on a Rust-first stack.
         </p>
       </section>
 
-      <section id="proposals" class="proposals reveal" style="--d: 220ms">
-        <h2>Proposals</h2>
+      <section id="proposals" class="section reveal" style="--d: 220ms">
+        <h2>Research</h2>
         <p>
-          VGAC: Verifier-Grounded Agreement-Calibrated Reinforcement Learning for Long-Horizon Agents
-          explores verifier-grounded rollout agreement, entropy-aware calibration, and reward shaping to reduce
-          silent overconfident failures in long-horizon RL agents.
+          <a class="paper"
+            href="VGAC%3A%20Veri%EF%AC%81er-Grounded%20Agreement-Calibrated%20Reinforcement%20Learning%20for%20Long-Horizon%20Agents.pdf?v=20260708"
+            target="_blank" rel="noreferrer noopener">VGAC: Verifier-Grounded Agreement-Calibrated
+            Reinforcement Learning for Long-Horizon Agents</a>
+          proposes verifier-grounded rollout agreement, entropy-aware calibration, and reward shaping
+          to reduce silent overconfident failures in long-horizon RL agents.
         </p>
       </section>
 

@@ -133,30 +133,16 @@ h1 {
   border: 0;
 }
 
-.journal {
-  margin-top: 0.55rem;
-  max-width: 62ch;
-}
-
-.journal p {
-  margin: 0.82rem 0 0;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.72;
-}
-
-.journal p:first-child {
-  margin-top: 0;
-}
-
-.projects,
-.proposals {
+.section {
   margin-top: 1.15rem;
   max-width: 62ch;
 }
 
-.projects h2,
-.proposals h2 {
+.section.now {
+  margin-top: 1rem;
+}
+
+.section h2 {
   margin: 0;
   font-size: 1.02rem;
   font-family: "Space Mono", monospace;
@@ -164,39 +150,29 @@ h1 {
   color: var(--accent-2);
 }
 
-.projects p,
-.proposals p {
+.section p {
   margin: 0.55rem 0 0;
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.66;
 }
 
-.projects a,
-.proposals a {
+.section a {
   color: var(--ink);
   text-decoration-color: rgba(30, 42, 47, 0.35);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
-.proposals a {
-  font-style: italic;
-  color: var(--ink);
-  text-decoration-color: var(--ink);
-}
-
-.projects a:hover,
-.projects a:focus-visible,
-.proposals a:hover,
-.proposals a:focus-visible {
+.section a:hover,
+.section a:focus-visible {
   color: var(--accent);
   text-decoration-color: var(--accent);
   outline: none;
 }
 
-.proposals a:hover,
-.proposals a:focus-visible {
+.section a.paper {
+  font-style: italic;
   color: var(--ink);
   text-decoration-color: var(--ink);
 }
@@ -266,13 +242,7 @@ footer {
     margin-bottom: 0.1rem;
   }
 
-  .journal p {
-    font-size: 1rem;
-    line-height: 1.66;
-  }
-
-  .projects p,
-  .proposals p {
+  .section p {
     font-size: 0.98rem;
   }
 }
