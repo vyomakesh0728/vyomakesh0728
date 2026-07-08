@@ -1,0 +1,44 @@
+name: Revert to github.io before itsvyom.com expires
+
+# itsvyom.com expires 2027-07-08. This removes the custom domain at
+# 2027-07-07 00:00 IST (2027-07-06 18:30 UTC) so the site falls back to
+# https://vyomakesh0728.github.io/vyomakesh0728/ before DNS goes dark.
+# If the domain gets renewed, delete this workflow.
+
+on:
+  schedule:
+    - cron: "30 18 6 7 *" # 6 July 18:30 UTC = 7 July 00:00 IST, yearly; year-guarded below
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove CNAME (scheduled runs only act in 2027)
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y)" -lt 2027 ]; then
+            echo "Before 2027 — skipping."
+            exit 0
+          fi
+          if [ ! -f CNAME ]; then
+            echo "CNAME already removed — nothing to do."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm CNAME
+          git commit -m "Revert to vyomakesh0728.github.io (itsvyom.com expiring 2027-07-08)"
+          git push
+
+      - name: Request Pages rebuild so the domain change applies
+        run: |
+          curl -sf -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds
