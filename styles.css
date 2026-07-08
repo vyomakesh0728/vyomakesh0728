@@ -218,7 +218,17 @@ footer {
   }
 
   .side-column {
+    position: static;
+  }
+
+  .side-column .contact-grid {
     display: none;
+  }
+
+  .profile-wrap {
+    width: 132px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
   }
 
   .contact-grid-mobile {
