@@ -40,9 +40,9 @@
     </p>
 
     <p class="intro">
-      I&rsquo;m working on ARC-AGI-3 and building open-source RL environments. Most of my work is
-      evaluation infrastructure, RL environments, and GPU-level performance tooling for AI
-      systems&mdash;making execution paths trustworthy first and fast immediately after.
+      Current work targets ARC-AGI-3 and open-source RL environments. The broader program is evaluation
+      infrastructure, RL environments, and GPU-level performance tooling for AI systems&mdash;making
+      execution paths trustworthy first and fast immediately after.
     </p>
 
     <section>
@@ -50,29 +50,28 @@
 
       <h3><span class="secnum sub">1.1</span>Zerobrew</h3>
       <p>
-        I made Zerobrew <a class="cite" href="#ref-2">[2]</a> cold installs 3.6&times; faster
-        (361&thinsp;s&nbsp;&rarr;&nbsp;99&thinsp;s) with racing cancellation and HTTP/2 tuning. The change was
+        Zerobrew <a class="cite" href="#ref-2">[2]</a> cold installs were made 3.6&times; faster
+        (361&thinsp;s&nbsp;&rarr;&nbsp;99&thinsp;s) via racing cancellation and HTTP/2 tuning. The change was
         merged to main and shipped to every user.
       </p>
 
       <h3><span class="secnum sub">1.2</span>Evaluation environments</h3>
       <p>
-        I built six reproducible evaluation environments (safety, web agents, tool use/MCP, and a game suite)
-        for Prime Intellect&rsquo;s Community Environments <a class="cite" href="#ref-3">[3]</a>, keeping
-        rollout, verifier, and scoring paths separate so failures are easy to attribute.
+        Six reproducible evaluation environments (safety, web agents, tool use/MCP, and a game suite) were
+        built for Prime Intellect&rsquo;s Community Environments <a class="cite" href="#ref-3">[3]</a>,
+        keeping rollout, verifier, and scoring paths separate so failures are easy to attribute.
       </p>
 
       <h3><span class="secnum sub">1.3</span>GPU kernels</h3>
       <p>
-        I reached 12.804&thinsp;&micro;s on an NVIDIA B200 in GPU Mode&rsquo;s nvfp4 block-scaled GEMM
-        hackathon <a class="cite" href="#ref-4">[4]</a>, writing CuTeDSL kernels aimed at speed-of-light
-        performance.
+        CuTeDSL kernels aimed at speed-of-light performance reached 12.804&thinsp;&micro;s on an NVIDIA B200
+        in GPU Mode&rsquo;s nvfp4 block-scaled GEMM hackathon <a class="cite" href="#ref-4">[4]</a>.
       </p>
 
       <h3><span class="secnum sub">1.4</span>OpenGraphs</h3>
       <p>
-        I built OpenGraphs <a class="cite" href="#ref-5">[5]</a> at Build India Hack (Anthropic &times; Replit
-        &times; Lightspeed): a local-first, TUI-native experiment tracker for AI runs over SSH, with live
+        OpenGraphs <a class="cite" href="#ref-5">[5]</a>, built at Build India Hack (Anthropic &times; Replit
+        &times; Lightspeed), is a local-first, TUI-native experiment tracker for AI runs over SSH, with live
         graphs, logs, and run comparison on a Rust-first stack.
       </p>
     </section>
@@ -80,7 +79,8 @@
     <section>
       <h2><span class="secnum">2</span>Results</h2>
       <p>
-        The headline numbers are in <a class="internal" href="#tab-1">Table&nbsp;1</a>. All of them are real.
+        Headline numbers are collected in <a class="internal" href="#tab-1">Table&nbsp;1</a>. All of them are
+        real.
       </p>
       <div class="table-scroll">
         <table id="tab-1">
