@@ -1,9 +1,12 @@
 :root {
-  --bg: #ffffff;
-  --ink: #1e2a2f;
-  --muted: #47535a;
-  --accent: #d4572c;
-  --accent-2: #b3946c;
+  --paper: #ffffff;
+  --ink: #111111;
+  --muted: #555555;
+  --rule: #111111;
+  /* hyperref defaults: cites green, urls blue, internal refs red */
+  --c-cite: #008000;
+  --c-url: #0000cc;
+  --c-int: #cc0000;
 }
 
 * {
@@ -32,271 +35,251 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Archivo", "Segoe UI", sans-serif;
+  font-family: "Computer Modern Serif", Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
   color: var(--ink);
-  background: var(--bg);
+  background: var(--paper);
+  text-rendering: optimizeLegibility;
 }
 
-.shell {
-  width: min(50rem, calc(100% - 2rem));
-  margin: 1.8rem auto 2.3rem;
+.paper {
+  width: min(44rem, calc(100% - 2.4rem));
+  margin: 2.2rem auto 3rem;
 }
 
-.hero {
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: minmax(11.25rem, 14rem) minmax(0, 1fr);
-  gap: 1.7rem;
-}
-
-h1 {
-  margin: 0;
-  font-weight: 500;
-  font-size: clamp(1.5rem, 4.2vw, 2.3rem);
-  line-height: 1.1;
-  white-space: nowrap;
-  color: var(--accent-2);
-}
-
-.prev {
-  margin: 0.35rem 0 0;
-  font-family: "Space Mono", monospace;
-  font-size: 0.86rem;
-  letter-spacing: 0.02em;
-  color: var(--muted);
-}
-
-.prev a {
-  color: var(--ink);
-  text-decoration-color: rgba(30, 42, 47, 0.35);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-.prev a:hover,
-.prev a:focus-visible {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-  outline: none;
-}
-
-.lede {
+.paper p {
   margin: 0.55rem 0 0;
-  color: var(--muted);
-  line-height: 1.45;
-  font-size: 0.98rem;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
-.side-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.45rem;
-  align-self: start;
-  position: sticky;
-  top: 1.4rem;
-}
+/* ---- arXiv margin strip ---- */
 
-.profile-wrap {
-  margin: 0;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: 0.875rem;
-  overflow: hidden;
-}
-
-.profile-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 26%;
-  display: block;
-}
-
-.contact-grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 0.42rem;
-}
-
-.contact-grid-mobile {
-  display: none;
-}
-
-.social-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.125rem;
-  height: 2.125rem;
-  text-decoration: none;
-  color: var(--ink);
-  transition: transform 180ms ease, color 180ms ease;
-}
-
-.social-pill:hover,
-.social-pill:focus-visible {
-  transform: translateY(-1px);
-  color: var(--accent);
-  outline: none;
-}
-
-.social-pill img {
-  width: 1.25rem;
-  height: 1.25rem;
-  flex: 0 0 auto;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+.arxiv-strip {
+  position: fixed;
+  left: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: "Computer Modern Typewriter", "Courier New", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  color: #8a8a8a;
   white-space: nowrap;
-  border: 0;
+  user-select: none;
 }
 
-.section {
-  margin-top: 1.15rem;
-  max-width: 62ch;
+@media (max-width: 1080px) {
+  .arxiv-strip {
+    display: none;
+  }
 }
 
-.section.now {
-  margin-top: 1.7rem;
-}
+/* ---- front matter ---- */
 
-.section h2 {
+.preprint-note {
   margin: 0;
-  font-size: 1.02rem;
-  font-family: "Space Mono", monospace;
-  letter-spacing: 0.02em;
-  color: var(--accent-2);
-}
-
-.section p {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.66;
-}
-
-.section a {
-  color: var(--ink);
-  text-decoration-color: rgba(30, 42, 47, 0.35);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-.section a:hover,
-.section a:focus-visible {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-  outline: none;
-}
-
-.section a.paper {
+  text-align: center;
   font-style: italic;
-  color: var(--ink);
-  text-decoration-color: var(--ink);
-}
-
-.fade-dots {
-  margin: 1.2rem 0 1rem;
-  height: 2px;
-  background-image: radial-gradient(circle, rgba(30, 42, 47, 0.56) 1px, transparent 1.15px);
-  background-size: 10px 2px;
-  mask-image: linear-gradient(to right, transparent, black 14%, black 86%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 14%, black 86%, transparent);
-}
-
-footer {
-  margin-top: 1.2rem;
-  color: var(--muted);
   font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.title {
+  margin: 2.1rem auto 0;
+  max-width: 36rem;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.28;
   text-align: center;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  animation: rise 620ms cubic-bezier(0.21, 0.92, 0.23, 1) forwards;
-  animation-delay: var(--d, 0ms);
+.affil {
+  margin: 0.75rem 0 0;
+  text-align: center !important;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
-@keyframes rise {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.contact {
+  margin: 0.55rem 0 0;
+  text-align: center !important;
+  font-family: "Computer Modern Typewriter", "Courier New", monospace;
+  font-size: 0.88rem;
 }
 
-@media (max-width: 760px) {
-  .shell {
-    width: min(100%, calc(100% - 1.2rem));
-    margin-top: 1rem;
-    margin-bottom: 1.35rem;
+.contact.links {
+  margin-top: 0.2rem;
+  color: var(--muted);
+}
+
+.intro {
+  margin-top: 1.9rem;
+}
+
+/* ---- sections ---- */
+
+section {
+  margin-top: 0;
+}
+
+h2 {
+  margin: 1.9rem 0 0;
+  font-size: 1.16rem;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 1.25rem 0 0;
+  font-size: 1.03rem;
+  font-weight: 700;
+}
+
+.secnum {
+  display: inline-block;
+  min-width: 1.7em;
+}
+
+.secnum.sub {
+  min-width: 2.5em;
+}
+
+/* ---- links, hyperref style: colored, no underline ---- */
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  outline: none;
+}
+
+a.url {
+  color: var(--c-url);
+}
+
+a.cite {
+  color: var(--c-cite);
+}
+
+a.internal {
+  color: var(--c-int);
+}
+
+/* ---- table, booktabs style ---- */
+
+.table-scroll {
+  margin-top: 1.1rem;
+  overflow-x: auto;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  border-top: 1.5px solid var(--rule);
+  border-bottom: 1.5px solid var(--rule);
+}
+
+caption {
+  caption-side: top;
+  padding-bottom: 0.55rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+th {
+  font-weight: 700;
+  border-bottom: 1px solid var(--rule);
+}
+
+th,
+td {
+  padding: 0.32em 0.95em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* ---- references ---- */
+
+.references {
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ref;
+  font-size: 0.95rem;
+}
+
+.references li {
+  counter-increment: ref;
+  margin-top: 0.35rem;
+  padding-left: 2.1em;
+  text-indent: -2.1em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.references li::before {
+  content: "[" counter(ref) "]\00a0";
+}
+
+/* ---- bibtex ---- */
+
+.bibtex {
+  margin: 0.8rem 0 0;
+  padding: 0.85rem 1rem;
+  background: #f6f6f3;
+  font-family: "Computer Modern Typewriter", "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  overflow-x: auto;
+}
+
+/* ---- footer ---- */
+
+footer {
+  margin-top: 2.4rem;
+}
+
+footer p {
+  text-align: center !important;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ---- small screens ---- */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 1rem;
   }
 
-  .layout {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.4rem 0.95rem;
-    align-items: center;
+  .paper {
+    width: min(100%, calc(100% - 1.6rem));
+    margin-top: 1.5rem;
   }
 
-  .content {
-    display: contents;
+  .paper p {
+    text-align: left;
   }
 
-  .content .section {
-    grid-column: 1 / -1;
+  .title {
+    font-size: 1.32rem;
   }
 
-  h1 {
+  caption {
     white-space: normal;
   }
-
-  .side-column {
-    position: static;
-  }
-
-  .side-column .contact-grid {
-    display: none;
-  }
-
-  .profile-wrap {
-    width: min(132px, 35vw);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-  }
-
-  .contact-grid-mobile {
-    display: flex;
-    margin-top: 0.45rem;
-    margin-bottom: 0.1rem;
-  }
-
-  .section p {
-    font-size: 0.98rem;
-  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
+@media print {
+  .arxiv-strip {
+    position: absolute;
   }
 }
