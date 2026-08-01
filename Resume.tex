@@ -1,4 +1,4 @@
-\documentclass[11pt,letterpaper]{article}
+\documentclass[10pt,letterpaper]{article}
 
 \usepackage[letterpaper,margin=0.5in]{geometry}
 \usepackage[T1]{fontenc}
@@ -7,113 +7,128 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\setlength{\emergencystretch}{0.8em}
+\hyphenpenalty=5000
+\exhyphenpenalty=5000
+
+\newlength{\entryindent}
+\setlength{\entryindent}{8pt}
+\setlist[itemize]{
+  label=\raisebox{0.15ex}{\scriptsize\textbullet},
+  leftmargin=2.45em,
+  labelsep=0.55em,
+  itemsep=2.2pt,
+  topsep=2.2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
 \newcommand{\resumeSection}[1]{%
-  \vspace{0.3em}%
-  \noindent\textbf{\large #1}\hspace{0.45em}\leaders\hrule height 0.5pt\hfill\kern0pt\par
-  \vspace{0.1em}%
+  \vspace{0.62em}%
+  \noindent{\fontsize{11.5}{13}\selectfont\scshape #1}\par
+  \vspace{0.22em}%
+  \hrule height 0.4pt
+  \vspace{0.48em}%
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \begin{tabularx}{\textwidth}{@{}Yr@{}}
-    \textbf{#1} & \textbf{#2} \\
-    \textit{#3} & \textit{#4} \\
+  \begin{tabularx}{\textwidth}{@{\hspace{\entryindent}}Yr@{\hspace{4pt}}}
+    {\fontsize{10}{11.3}\selectfont\textbf{#1}} & #4 \\
+    \textit{#3} & \textit{#2} \\
   \end{tabularx}\vspace{-0.25em}
 }
 
-\newcommand{\resumeEntry}[4]{
-  \begin{tabularx}{\textwidth}{@{}Yr@{}}
-    \textbf{#1} & \textbf{#2} \\
+\newcommand{\resumeSingleHeading}[2]{
+  \begin{tabularx}{\textwidth}{@{\hspace{\entryindent}}Yr@{\hspace{4pt}}}
+    {\fontsize{10}{11.3}\selectfont\textbf{#1}} & #2 \\
+  \end{tabularx}\vspace{-0.25em}
+}
+
+\newcommand{\educationEntry}[4]{
+  \begin{tabularx}{\textwidth}{@{\hspace{\entryindent}}Yr@{\hspace{4pt}}}
+    {\fontsize{10}{11.3}\selectfont\textbf{#1}} & #2 \\
     \textit{#3} & \textit{#4} \\
-  \end{tabularx}\vspace{0.15em}
+  \end{tabularx}\vspace{0.12em}
 }
 
 \newcommand{\resumeCertEntry}[3]{
-  \begin{tabularx}{\textwidth}{@{}Yr@{}}
-    \textbf{#1} {\small \textbar{} \textit{#2}} & \textbf{#3} \\
+  \begin{tabularx}{\textwidth}{@{\hspace{\entryindent}}Yr@{\hspace{4pt}}}
+    \textbf{#1} {\small \textbar{} \textit{#2}} & #3 \\
   \end{tabularx}
-  \vspace{0.05em}
 }
 
 \begin{document}
+\fontsize{9.3}{11.35}\selectfont
 
 \begin{center}
-    {\LARGE \textbf{Vyomakesh Dundigalla}}\\[0.25em]
-    {\normalsize AI Researcher \textbar{} Agents \textbar{} Evaluation Infrastructure \textbar{} Inference Engineering \textbar{} GPU Systems}\\[0.4em]
-    {\small
-    \href{mailto:vyomakesh018@gmail.com}{vyomakesh018@gmail.com} \textbar{}
-    \href{https://linkedin.com/in/vyomakesh-dundigalla-061575159}{linkedin.com/in/vyomakesh-dundigalla-061575159}}\\[-0.1em]
-    {\small \href{https://github.com/vyomakesh0728}{github.com/vyomakesh0728}}
+  {\fontsize{21}{23}\selectfont\textbf{Vyomakesh Dundigalla}}\\[0.12em]
+  {\fontsize{9.1}{10.8}\selectfont
+  August 1, 2026 \textbar{}
+  \href{mailto:vyomakesh018@gmail.com}{\underline{vyomakesh018@gmail.com}} \textbar{}
+  \href{https://github.com/vyomakesh0728}{\underline{github.com/vyomakesh0728}} \textbar{}
+  \href{https://itsvyom.com}{\underline{itsvyom.com}} \textbar{} Bangalore, India}
 \end{center}
-
-\resumeSection{Summary}
-{\small
-AI research engineer focused on agents, post-training alignment, reproducible evaluation systems, inference engineering, and GPU-level performance optimization. I build agent/eval infrastructure, verifier-backed training loops, trace instrumentation, and practical systems for turning research workflows into reliable experiments.
-}
-
-\resumeSection{Research Interests}
-\begin{itemize}
-    \item Reinforcement Learning (RL), self-distillation, pre/post-training, reward modeling, and preference optimization.
-    \item Evaluation frameworks for agents, benchmark design, and instrumentation for failure analysis.
-    \item Inference engineering for LLM serving, rollout generation, and performance-aware deployment.
-\end{itemize}
 
 \resumeSection{Highlighted Achievements}
 \begin{itemize}
-    \item Optimized Zerobrew package manager downloads 3.6x faster (6 min to 1.7 min) via racing cancellation and HTTP/2 tuning (Jan 2026).
-    \item Achieved 12.804 microseconds in NVIDIA GPU Mode ``nvfp4 block-scaled GEMM'' optimization hackathon on B200, targeting speed-of-light performance with CuTeDSL (Dec 2025).
-    \item Built 6 reproducible evaluation environments and benchmarks (2 safety, 2 web, 1 tool-use/MCP, 1 game suite) for PrimeIntellect verifiers (2025).
+  \item Achieved 12.804 microseconds in NVIDIA GPU Mode's ``nvfp4 block-scaled GEMM'' optimization hackathon.
+  \item Recorded \href{https://www.gpumode.com/leaderboard/763?tab=rankings}{13.779 microseconds} on an AMD Instinct MI355X in GPU Mode's ``amd-mxfp4-mm'' competition.
+  \item Scored \href{https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/submissions?select=53209398}{0.848 public accuracy} in Kaggle's NVIDIA Nemotron Model Reasoning Challenge.
 \end{itemize}
 
 \resumeSection{Experience}
-\resumeSubheading{LiteFold}{Apr 2026 -- Jun 2026}{Founding AI Researcher}{Bangalore, India}
+\resumeSubheading{\underline{LiteFold}}{Apr 2026 -- Jun 2026}{Founding AI Researcher}{Bangalore, India}
 \begin{itemize}
-    \item Building PLM training and inference pipelines for protein design, from sequence proposal optimization to model reasoning systems.
-    \item Building verifier-backed reward infrastructure for PLM workflows, turning model outputs into computable training and evaluation signals.
+  \item Contract role, working on protein sequence optimization for PLMs.
+  \item Shipped protein-seq/struct RL environments.
+  \item Generated synthetic-data trajectories for protein reasoning.
 \end{itemize}
 
-\resumeSubheading{Zerobrew}{Jan 2026}{Performance / Systems Engineer (OSS)}{Remote}
+\resumeSingleHeading{\underline{Zerobrew}}{Remote, Jan 2026}
 \begin{itemize}
-    \item Delivered 3.6x download optimization (361s to 99s) with racing cancellation and HTTP/2 tuning, eliminating redundant bandwidth usage through atomic coordination (AtomicBool, Notify, and Semaphore).
-    \item Merged to main and immediately impacted all users.
+  \item Early maintainer of a leading download package manager with 7.5K stars on GitHub.
+  \item Delivered a 3.6x download speedup (361s to 99s) with racing cancellation and HTTP/2 tuning.
 \end{itemize}
 
-\resumeSubheading{PrimeIntellect-ai (Environments Hub)}{Jul 2025 -- Apr 2026}{AI Research Engineer (Agents \& Evals, OSS)}{Remote}
+\resumeSingleHeading{\underline{PrimeIntellect-ai}}{Remote, Jul 2025 -- Apr 2026}
 \begin{itemize}
-    \item Core contributor to evaluation infrastructure with 5+ merged PRs spanning benchmarks, web agents, and training pipeline integrations.
-    \item Built 6 evaluation environments across web agents, tool-use systems, and games with a unified API contract for reproducible cross-benchmark testing.
-    \item Separated rollout, verifier, and scoring paths across benchmarks to make failures easier to attribute during evaluation runs.
-    \item Added sandboxed execution boundaries and process isolation for safer, auditable agent runs.
-    \item Key contributions: BALROG game suite (6 simulators), BrowsecompPlus, WebVoyager, JailbreakBench and WMDP safety evals, and HuggingFace MCP integration.
+  \item Early core contributor to evals, with 5+ merged PRs spanning reproducible RL environments.
+  \item Shipped WebVoyager Env \href{https://github.com/PrimeIntellect-ai/community-environments/pull/235}{\underline{PrimeIntellect-ai/community-environments/WebVoyager}}.
+  \item Shipped BrowseComp-Plus Env \href{https://github.com/PrimeIntellect-ai/community-environments/pull/234}{\underline{PrimeIntellect-ai/community-environments/BrowseComp-plus}}.
+  \item Shipped BALROG Env \href{https://github.com/PrimeIntellect-ai/community-environments/pull/233}{\underline{PrimeIntellect-ai/community-environments/Balrog}}.
+  \item Other verified environments shipped at \href{https://github.com/PrimeIntellect-ai/community-environments/pulls?q=is\%3Apr+is\%3Amerged+author\%3Avyomakesh0728}{\underline{PrimeIntellect-ai/community-environments}}.
 \end{itemize}
-
-\resumeSection{Proposals}
-\resumeSubheading{VGAC: Verifier-Grounded Agreement-Calibrated RL}{2026}{Independent research proposal}{}
-\begin{itemize}
-    \item Proposed grouped rollouts, verifier signals, and entropy-aware calibration to reduce silent overconfident failures in long-horizon agents.
-    \item Connected training-time reward shaping with inference-time verify/replan routing for agents that need robust uncertainty estimates.
-\end{itemize}
-
-\newpage
-\resumeSection{Technical Skills}
-\textbf{Languages:} Python, C, C++, Rust, Bash, SQL, CUDA\\
-\textbf{DL / ML:} PyTorch, TensorFlow, Keras, NumPy, Matplotlib, Pandas, SciPy\\
-\textbf{LLM Training \& Serving:} Transformers, PEFT, vLLM, FSDP, Ray, verl, DeepSpeed ZeRO\\
-\textbf{GPU:} Cutlass, CuTeDSL, FP4/FP8 kernels, throughput and latency optimization\\
-\textbf{Eval \& Agents:} Stateful, web, and tool-use benchmarks, reward design, trace instrumentation\\
-\textbf{Infra \& Tooling:} Docker, sandboxed execution, API integrations, profiling and performance tooling\\
-\textbf{Web \& Others:} HTML, CSS, JavaScript, FastAPI, Node.js, Git, LaTeX
 
 \resumeSection{Education}
-\resumeEntry{Queen Mary University of London}{Sep 2022 -- Oct 2023}{MSc in Business in Blockchain \& Society}{London, UK}
-\resumeEntry{Keshav Memorial Institute of Technology (Aff. JNTU)}{Oct 2017 -- Sep 2021}{Bachelor of Technology in Electronics and Communication Engineering}{Hyderabad, India}
+\educationEntry{MSc in Business in Blockchain \& Society}{London, UK}{\underline{Queen Mary University of London}}{Sep 2022 -- Oct 2023}
+\begin{itemize}
+  \item \textit{Topics of note:} Applied statistics, probability, graph theory, network science, linear algebra, econometrics, game theory, and discrete mathematics for cryptography.
+\end{itemize}
+\educationEntry{Bachelor of Technology in Electronics and Communication Engineering}{Hyderabad, India}{\underline{Keshav Memorial Institute of Technology (Aff. JNTU)}}{Oct 2017 -- Sep 2021}
+\begin{itemize}
+  \item \textit{Topics of note:} Calculus, semiconductor physics, electromagnetics, signal processing, control systems, digital logic, and microprocessors.
+\end{itemize}
+
+\resumeSection{Other Projects \& Proposals}
+\begin{itemize}
+  \item Dundigalla, V. (March 2026) \textit{VGAC: Verifier-Grounded Agreement-Calibrated Reinforcement Learning for Long-Horizon Agents}. Independent research proposal. Available at: \href{https://itsvyom.com/VGAC\%3A\%20Veri\%EF\%AC\%81er-Grounded\%20Agreement-Calibrated\%20Reinforcement\%20Learning\%20for\%20Long-Horizon\%20Agents.pdf?v=20260708}{\underline{PDF}}.
+  \item \href{https://github.com/vyomakesh0728/opengraphs}{\underline{OpenGraphs}} model-training observability in a TUI with 500+ npm downloads.
+\end{itemize}
+
+\resumeSection{Skills}
+\begin{tabularx}{\textwidth}{@{\hspace{\entryindent}}L{1.85in}Y@{\hspace{4pt}}}
+  \textbf{Programming Languages} & Python, JavaScript, C/C++, Rust, CUDA \\
+  \textbf{Libraries} & PyTorch, Hugging Face, NumPy, Pandas, SciPy, Matplotlib, CuTeDSL \\
+  \textbf{Infrastructure Frameworks} & vLLM, FSDP, Ray, verl, DeepSpeed ZeRO, FastAPI, wandb \\
+  \textbf{Technologies} & Docker, sandboxes, cuda-gdb, SSH, \LaTeX, SLURM
+\end{tabularx}
 
 \resumeSection{Certifications}
 \resumeCertEntry{Deep Learning Specialization}{DeepLearning.AI}{Apr 2020}
-\resumeCertEntry{Google IT Automation with Python}{Google}{Aug 2020}
 
 \end{document}
