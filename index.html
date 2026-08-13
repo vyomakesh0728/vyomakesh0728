@@ -36,13 +36,18 @@
       <a class="url" href="https://linkedin.com/in/vyomakesh-dundigalla-061575159" target="_blank"
         rel="noreferrer noopener">linkedin</a>
       &middot;
-      <a class="url" href="Resume.pdf?v=20260801w" target="_blank" rel="noreferrer noopener">cv&nbsp;[pdf]</a>
+      <a class="url" href="https://www.kaggle.com/vyomakeshdundigalla" target="_blank"
+        rel="noreferrer noopener">kaggle</a>
+      &middot;
+      <a class="url" href="Resume.pdf?v=20260813a" target="_blank" rel="noreferrer noopener">cv&nbsp;[pdf]</a>
     </p>
 
     <p class="intro">
       Current work targets ARC-AGI-3 and open-source RL environments. The broader program is evaluation
       infrastructure, RL environments, and GPU-level performance tooling for AI systems&mdash;making
-      execution paths trustworthy first and fast immediately after.
+      execution paths trustworthy first and fast immediately after. Previously, in a contract role at
+      LiteFold, I worked on protein sequence optimization for PLMs, shipped protein-seq/struct RL
+      environments, and generated synthetic-data trajectories for protein reasoning.
     </p>
 
     <section>
@@ -50,29 +55,31 @@
 
       <h3><span class="secnum sub">1.1</span>Zerobrew</h3>
       <p>
-        Zerobrew <a class="cite" href="#ref-2">[2]</a> cold installs were made 3.6&times; faster
-        (361&thinsp;s&nbsp;&rarr;&nbsp;99&thinsp;s) via racing cancellation and HTTP/2 tuning. The change was
-        merged to main and shipped to every user.
+        As an early maintainer of Zerobrew <a class="cite" href="#ref-2">[2]</a>, a package manager with
+        7.5K GitHub stars, I delivered a 3.6&times; download speedup
+        (361&thinsp;s&nbsp;&rarr;&nbsp;99&thinsp;s) via racing cancellation and HTTP/2 tuning.
       </p>
 
       <h3><span class="secnum sub">1.2</span>Evaluation environments</h3>
       <p>
-        Six reproducible evaluation environments (safety, web agents, tool use/MCP, and a game suite) were
-        built for Prime Intellect&rsquo;s Community Environments <a class="cite" href="#ref-3">[3]</a>,
-        keeping rollout, verifier, and scoring paths separate so failures are easy to attribute.
+        As an early core contributor to Prime Intellect&rsquo;s Community Environments
+        <a class="cite" href="#ref-3">[3]</a>, I merged 5+ PRs spanning reproducible RL environments,
+        including WebVoyager <a class="cite" href="#ref-8">[8]</a>, BrowseComp-Plus
+        <a class="cite" href="#ref-9">[9]</a>, and BALROG <a class="cite" href="#ref-10">[10]</a>.
       </p>
 
       <h3><span class="secnum sub">1.3</span>GPU kernels</h3>
       <p>
-        CuTeDSL kernels aimed at speed-of-light performance reached 12.804&thinsp;&micro;s on an NVIDIA B200
-        in GPU Mode&rsquo;s nvfp4 block-scaled GEMM hackathon <a class="cite" href="#ref-4">[4]</a>.
+        CuTeDSL kernels reached 12.804&thinsp;&micro;s in GPU Mode&rsquo;s NVIDIA B200 nvfp4 block-scaled GEMM
+        hackathon <a class="cite" href="#ref-4">[4]</a> and 13.779&thinsp;&micro;s on an AMD Instinct MI355X in
+        the amd-mxfp4-mm competition <a class="cite" href="#ref-6">[6]</a>.
       </p>
 
       <h3><span class="secnum sub">1.4</span>OpenGraphs</h3>
       <p>
         OpenGraphs <a class="cite" href="#ref-5">[5]</a>, built at Build India Hack (Anthropic &times; Replit
         &times; Lightspeed), is a local-first, TUI-native experiment tracker for AI runs over SSH, with live
-        graphs, logs, and run comparison on a Rust-first stack.
+        graphs, logs, and run comparison on a Rust-first stack. Its npm CLI has 500+ downloads.
       </p>
     </section>
 
@@ -104,9 +111,24 @@
               <td>12.804&thinsp;&micro;s</td>
             </tr>
             <tr>
+              <td>amd-mxfp4-mm, MI355X <a class="cite" href="#ref-6">[6]</a></td>
+              <td>latency</td>
+              <td>13.779&thinsp;&micro;s</td>
+            </tr>
+            <tr>
+              <td>Nemotron reasoning challenge <a class="cite" href="#ref-7">[7]</a></td>
+              <td>public accuracy</td>
+              <td>0.848</td>
+            </tr>
+            <tr>
               <td>Community Environments <a class="cite" href="#ref-3">[3]</a></td>
-              <td>environments merged</td>
-              <td>6</td>
+              <td>PRs merged</td>
+              <td>5+</td>
+            </tr>
+            <tr>
+              <td>OpenGraphs CLI <a class="cite" href="#ref-5">[5]</a></td>
+              <td>npm downloads</td>
+              <td>500+</td>
             </tr>
           </tbody>
         </table>
@@ -118,7 +140,7 @@
       <p>
         VGAC <a class="cite" href="#ref-1">[1]</a> proposes verifier-grounded rollout agreement, entropy-aware
         calibration, and reward shaping to reduce silent overconfident failures in long-horizon RL agents. The
-        preprint is available <a class="cite" href="#ref-1">[1]</a>.
+        proposal is available <a class="cite" href="#ref-1">[1]</a>.
       </p>
     </section>
 
@@ -126,7 +148,7 @@
       <h2>References</h2>
       <ol class="references">
         <li id="ref-1">V. Dundigalla. <i>VGAC: Verifier-Grounded Agreement-Calibrated Reinforcement Learning
-            for Long-Horizon Agents</i>. Preprint, 2026.
+            for Long-Horizon Agents</i>. Independent research proposal, March 2026.
           <a class="url"
             href="VGAC%3A%20Veri%EF%AC%81er-Grounded%20Agreement-Calibrated%20Reinforcement%20Learning%20for%20Long-Horizon%20Agents.pdf?v=20260708"
             target="_blank" rel="noreferrer noopener">[pdf]</a>
@@ -140,12 +162,33 @@
             rel="noreferrer noopener">github.com/PrimeIntellect-ai/community-environments</a>, 2026.
         </li>
         <li id="ref-4">GPU Mode. <i>nvfp4 block-scaled GEMM hackathon</i>.
-          <a class="url" href="https://www.gpumode.com/" target="_blank"
-            rel="noreferrer noopener">gpumode.com</a>, 2025.
+          <a class="url" href="https://www.gpumode.com/leaderboard/597?tab=rankings" target="_blank"
+            rel="noreferrer noopener">gpumode.com/leaderboard/597</a>, 2025.
         </li>
         <li id="ref-5">V. Dundigalla. <i>OpenGraphs</i>.
           <a class="url" href="https://github.com/vyomakesh0728/opengraphs" target="_blank"
             rel="noreferrer noopener">github.com/vyomakesh0728/opengraphs</a>, 2026.
+        </li>
+        <li id="ref-6">GPU Mode. <i>amd-mxfp4-mm leaderboard</i>.
+          <a class="url" href="https://www.gpumode.com/leaderboard/763?tab=rankings" target="_blank"
+            rel="noreferrer noopener">gpumode.com/leaderboard/763</a>, 2026.
+        </li>
+        <li id="ref-7">NVIDIA. <i>Nemotron Model Reasoning Challenge</i>.
+          <a class="url"
+            href="https://www.kaggle.com/competitions/nvidia-nemotron-model-reasoning-challenge/submissions?select=53209398"
+            target="_blank" rel="noreferrer noopener">kaggle.com</a>, 2026.
+        </li>
+        <li id="ref-8">V. Dundigalla. <i>WebVoyager environment</i>.
+          <a class="url" href="https://github.com/PrimeIntellect-ai/community-environments/pull/235"
+            target="_blank" rel="noreferrer noopener">PrimeIntellect-ai/community-environments/WebVoyager</a>, 2026.
+        </li>
+        <li id="ref-9">V. Dundigalla. <i>BrowseComp-Plus environment</i>.
+          <a class="url" href="https://github.com/PrimeIntellect-ai/community-environments/pull/234"
+            target="_blank" rel="noreferrer noopener">PrimeIntellect-ai/community-environments/BrowseComp-plus</a>, 2025.
+        </li>
+        <li id="ref-10">V. Dundigalla. <i>BALROG environment</i>.
+          <a class="url" href="https://github.com/PrimeIntellect-ai/community-environments/pull/233"
+            target="_blank" rel="noreferrer noopener">PrimeIntellect-ai/community-environments/Balrog</a>, 2025.
         </li>
       </ol>
     </section>
