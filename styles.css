@@ -133,6 +133,12 @@ a.url {
   color: var(--c-url);
 }
 
+a.url i {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
 .intro-emphasis {
   font-style: italic;
   text-decoration: underline;
