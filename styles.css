@@ -2,8 +2,6 @@
   --paper: #ffffff;
   --ink: #111111;
   --muted: #555555;
-  /* hyperref defaults: cites green, urls blue */
-  --c-cite: #008000;
   --c-url: #0000cc;
 }
 
@@ -139,10 +137,6 @@ a:focus-visible {
 
 a.url {
   color: var(--c-url);
-}
-
-a.cite {
-  color: var(--c-cite);
 }
 
 /* ---- footer ---- */
