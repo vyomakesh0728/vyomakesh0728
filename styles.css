@@ -74,6 +74,12 @@ body {
   color: var(--muted);
 }
 
+.contact.links a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
 .intro {
   margin-top: 1.25rem;
 }
@@ -125,6 +131,13 @@ a:focus-visible {
 
 a.url {
   color: var(--c-url);
+}
+
+.intro-emphasis {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 /* ---- small screens ---- */
