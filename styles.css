@@ -112,15 +112,6 @@ li {
   margin-top: 0.2rem;
 }
 
-.secnum {
-  display: inline-block;
-  min-width: 1.7em;
-}
-
-.secnum.sub {
-  min-width: 2.5em;
-}
-
 /* ---- links, hyperref style: colored, no underline ---- */
 
 a {
