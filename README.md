@@ -1,11 +1,10 @@
 ### hey 👋
 
 **Interests:**
-- reinforcement learning 
+- reinforcement learning/Self distillation
 - kernel optimization
 - distributed training & inference
-- Working on RLHF/GDPO pipelines and reward modeling
-- Exploring RLMs
+
 
 **Key Achievements:**
 - Optimized zerobrew package manager 3.6x faster (6min → 1.7min) via racing cancellation and HTTP/2 tuning
