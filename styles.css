@@ -1,8 +1,8 @@
 :root {
   --paper: #ffffff;
-  --ink: #4b6043;
-  --muted: #4b6043;
-  --c-url: #4b6043;
+  --ink: #000000;
+  --muted: #000000;
+  --c-url: #000000;
 }
 
 * {
