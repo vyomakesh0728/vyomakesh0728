@@ -78,6 +78,10 @@ body {
   margin-top: 1.9rem;
 }
 
+.reachout {
+  margin-top: 1.9rem !important;
+}
+
 /* ---- sections ---- */
 
 section {
@@ -121,18 +125,6 @@ a:focus-visible {
 
 a.url {
   color: var(--c-url);
-}
-
-/* ---- footer ---- */
-
-footer {
-  margin-top: 2.4rem;
-}
-
-footer p {
-  text-align: center !important;
-  font-size: 0.88rem;
-  color: var(--muted);
 }
 
 /* ---- small screens ---- */
